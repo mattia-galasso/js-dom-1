@@ -23,7 +23,7 @@ console.log(lightLamp);
 console.log(lightSwitch);
 
 //! PRIMO APPROCCIO
-/*
+
 // Dichiaro una variabile Booleana che verifica lo stato della lampadina
 let lightOn = false;
 
@@ -32,24 +32,29 @@ let lightOn = false;
 lightSwitch.addEventListener("click", function () {
   if (lightOn === false) {
     lightLamp.src = "../img/yellow_lamp.png";
+    lightLamp.style = "translate: -17%;";
     lightSwitch.innerText = "Spegni";
     lightOn = true;
   } else {
     lightLamp.src = "../img/white_lamp.png";
+    lightLamp.style = "translate: none;";
     lightSwitch.innerText = "Accendi";
     lightOn = false;
   }
 });
-*/
 
 //! SECONDO APPROCCIO
+/* 
 lightSwitch.addEventListener("click", function () {
-  const lightOn = lightLamp.src.includes("white_lamp");
-  if (lightOn === true) {
+  const lampOff = lightLamp.src.includes("white_lamp");
+  if (lampOff === true) {
     lightLamp.src = "../img/yellow_lamp.png";
+    lightLamp.style = "translate: -18%;";
     lightSwitch.innerText = "Spegni";
   } else {
     lightLamp.src = "../img/white_lamp.png";
+    lightLamp.style = "translate: 0;";
     lightSwitch.innerText = "Accendi";
   }
-});
+}); 
+*/
