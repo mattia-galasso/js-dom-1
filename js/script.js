@@ -14,3 +14,15 @@ Facciamo accendi e spegni:
 - E così via...
 
 */
+
+// Seleziono gli elementi del DOM da manipolare
+const lightLamp = document.getElementById("lamp");
+const lightSwitch = document.getElementById("switch");
+
+console.log(lightLamp);
+console.log(lightSwitch);
+
+// Dichiaro una variabile Booleana che verifica lo stato della lampadina
+let lightOn = false;
+
+// Al click sullo switch verifica se la lampadina è accesa o spenta e gli cambia la sorgente dell'immagine e il testo del bottone
