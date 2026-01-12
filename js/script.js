@@ -18,6 +18,7 @@ Facciamo accendi e spegni:
 // Seleziono gli elementi del DOM da manipolare
 const lightLamp = document.getElementById("lamp");
 const lightSwitch = document.getElementById("switch");
+const resetSwitch = document.getElementById("repair");
 
 console.log(lightLamp);
 console.log(lightSwitch);
@@ -26,11 +27,18 @@ console.log(lightSwitch);
 
 // Dichiaro una variabile Booleana che verifica lo stato della lampadina
 let lightOn = false;
-
+let clickCounter = 0;
 // Al click sullo switch verifica se la lampadina è accesa o spenta e gli cambia la sorgente dell'immagine e il testo del bottone
 
 lightSwitch.addEventListener("click", function () {
-  if (lightOn === false) {
+  clickCounter++;
+
+  if (clickCounter >= 5) {
+    lightLamp.src = "../img/lamp_broken.png";
+    lightSwitch.setAttribute("disabled", "");
+    lightSwitch.innerText = "Lampadina Rotta";
+    resetSwitch.classList = "btn btn-warning btn-lg";
+  } else if (lightOn === false) {
     lightLamp.src = "../img/yellow_lamp.png";
     lightLamp.style = "translate: -17%;";
     lightSwitch.innerText = "Spegni";
@@ -41,6 +49,16 @@ lightSwitch.addEventListener("click", function () {
     lightSwitch.innerText = "Accendi";
     lightOn = false;
   }
+});
+
+resetSwitch.addEventListener("click", function () {
+  clickCounter = 0;
+  resetSwitch.classList = "d-none";
+  lightLamp.src = "../img/white_lamp.png";
+  lightLamp.style = "translate: none;";
+  lightSwitch.innerText = "Accendi";
+  lightSwitch.removeAttribute("disabled");
+  lightOn = false;
 });
 
 //! SECONDO APPROCCIO
