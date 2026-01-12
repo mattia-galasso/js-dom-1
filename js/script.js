@@ -26,3 +26,14 @@ console.log(lightSwitch);
 let lightOn = false;
 
 // Al click sullo switch verifica se la lampadina è accesa o spenta e gli cambia la sorgente dell'immagine e il testo del bottone
+lightSwitch.addEventListener("click", function () {
+  if (lightOn === false) {
+    lightLamp.src = "../img/yellow_lamp.png";
+    lightSwitch.innerText = "Spegni";
+    lightOn = true;
+  } else {
+    lightLamp.src = "../img/white_lamp.png";
+    lightSwitch.innerText = "Accendi";
+    lightOn = false;
+  }
+});
